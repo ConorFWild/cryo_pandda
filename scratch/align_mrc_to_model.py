@@ -6,6 +6,9 @@ import sys
 import tempfile
 from typing import Optional
 
+import matplotlib
+matplotlib.use("Agg")
+
 import numpy as np
 
 from cryoUtils.atomicModel import MyStructure
