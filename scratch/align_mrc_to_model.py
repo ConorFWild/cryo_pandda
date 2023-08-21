@@ -183,7 +183,8 @@ def _test():
     fit_pdb_in_map(pdbFname, mapFname=refmap, pdbFnameOut=pdbFnameOut, resolution=3., maskFname=None, n_iterations=100)
 
 def fit_pdb_in_map_test(pdb, dmap, pdb_out):
-    fit_pdb_in_map(pdb, mapFname=dmap, pdbFnameOut=pdb_out, resolution=3., maskFname=None, n_iterations=100, verbose=True)
+    fit_pdb_in_map(str(Path(pdb).resolve()),
+                   mapFname=str(Path(dmap).resolve()), pdbFnameOut=str(Path(pdb_out).resolve()), resolution=3., maskFname=None, n_iterations=100, verbose=True)
 import fire
 if __name__ == "__main__":
     fire.Fire(fit_pdb_in_map_test)
