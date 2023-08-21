@@ -182,23 +182,28 @@ def _test():
     pdbFnameOut = "/tmp/kk.pdb"
     fit_pdb_in_map(pdbFname, mapFname=refmap, pdbFnameOut=pdbFnameOut, resolution=3., maskFname=None, n_iterations=100)
 
+def fit_pdb_in_map_test(pdb, dmap, pdb_out):
+    fit_pdb_in_map(pdb, mapFname=dmap, pdbFnameOut=pdb_out, resolution=3., maskFname=None, n_iterations=100)
+
 if __name__ == "__main__":
-    from argParseFromDoc import AutoArgumentParser, get_parser_from_function
-    parser = AutoArgumentParser("alignMaps")
+    fire.Fire(fit_pdb_in_map_test)
 
-    subparsers = parser.add_subparsers(help='command: fit_pdb_in_map or fit_map_in_map', required=True, dest='command')
-    pdb_in_map_parser = subparsers.add_parser('fit_pdb_in_map', help='fit a pdb in a map. Rigid body only.')
-    get_parser_from_function(fit_pdb_in_map, parser=pdb_in_map_parser)
-
-    map_in_map_parser = subparsers.add_parser('fit_map_in_map', help='fit a map in a reference map. Rigid body only.')
-    get_parser_from_function(fit_map_in_map, parser=map_in_map_parser)
-
-    arguments = parser.parse_args()
-    if arguments.command == "fit_pdb_in_map":
-        del arguments.command
-        fit_pdb_in_map(**vars(arguments))
-    elif arguments.command == "fit_map_in_map":
-        del arguments.command
-        fit_map_in_map(**vars(arguments))
-    else:
-        raise ValueError(f"Command not valid {arguments.command}")
+    # from argParseFromDoc import AutoArgumentParser, get_parser_from_function
+    # parser = AutoArgumentParser("alignMaps")
+    #
+    # subparsers = parser.add_subparsers(help='command: fit_pdb_in_map or fit_map_in_map', required=True, dest='command')
+    # pdb_in_map_parser = subparsers.add_parser('fit_pdb_in_map', help='fit a pdb in a map. Rigid body only.')
+    # get_parser_from_function(fit_pdb_in_map, parser=pdb_in_map_parser)
+    #
+    # map_in_map_parser = subparsers.add_parser('fit_map_in_map', help='fit a map in a reference map. Rigid body only.')
+    # get_parser_from_function(fit_map_in_map, parser=map_in_map_parser)
+    #
+    # arguments = parser.parse_args()
+    # if arguments.command == "fit_pdb_in_map":
+    #     del arguments.command
+    #     fit_pdb_in_map(**vars(arguments))
+    # elif arguments.command == "fit_map_in_map":
+    #     del arguments.command
+    #     fit_map_in_map(**vars(arguments))
+    # else:
+    #     raise ValueError(f"Command not valid {arguments.command}")
