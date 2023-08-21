@@ -184,7 +184,7 @@ def _test():
 
 def fit_pdb_in_map_test(pdb, dmap, pdb_out):
     fit_pdb_in_map(pdb, mapFname=dmap, pdbFnameOut=pdb_out, resolution=3., maskFname=None, n_iterations=100)
-
+import fire
 if __name__ == "__main__":
     fire.Fire(fit_pdb_in_map_test)
 
