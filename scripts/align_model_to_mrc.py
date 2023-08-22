@@ -7,15 +7,14 @@ from cryo_pandda.align_model_to_map import fit_pdb_in_map
 
 def _get_model_in_dir(dataset_dir):
     for file in dataset_dir.glob("*"):
-        if file.suffix == "pdb":
+        if file.suffix == ".pdb":
             return file
     ...
 
 
 def _get_mrc_in_dir(dataset_dir):
     for file in dataset_dir.glob("*"):
-        print(file.suffix)
-        if file.suffix == "mrc":
+        if file.suffix == ".mrc":
             return file
 
 
