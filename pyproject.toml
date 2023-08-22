@@ -37,8 +37,8 @@ dev = [
     "types-mock",
 ]
 
-[project.scripts]
-ligand_neighbourhood_alignment = "cryo_pandda.__main__:main"
+#[project.scripts]
+#ligand_neighbourhood_alignment = "cryo_pandda.__main__:main"
 
 [project.urls]
 GitHub = "https://github.com/ConorFWild/cryo_pandda"
