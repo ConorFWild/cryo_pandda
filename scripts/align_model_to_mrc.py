@@ -23,8 +23,8 @@ def __main__(data_dirs):
 
     # Iterate over dataset directories, finding the mrc file and running alignment on it
     for dataset_dir in data_dirs.glob("*"):
-        pdbFname = _get_model_in_dir(dataset_dir)
-        mapFname = _get_mrc_in_dir(dataset_dir)
+        pdbFname = str(_get_model_in_dir(dataset_dir))
+        mapFname = str(_get_mrc_in_dir(dataset_dir))
         pdbFnameOut = str(dataset_dir / "dimple.pdb")
 
         fit_pdb_in_map(
