@@ -14,6 +14,7 @@ def _get_model_in_dir(dataset_dir):
 
 def _get_mrc_in_dir(dataset_dir):
     for file in dataset_dir.glob("*"):
+        print(file.suffix)
         if file.suffix == "mrc":
             return file
 
