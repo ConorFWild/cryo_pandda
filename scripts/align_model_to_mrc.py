@@ -47,6 +47,7 @@ def __main__(data_dirs):
         )
 
 
+    print(f"Finished!")
 
 if __name__ == "__main__":
     fire.Fire(__main__)
