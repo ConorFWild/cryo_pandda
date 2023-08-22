@@ -27,6 +27,7 @@ def __main__(data_dirs):
         mapFname = str(_get_mrc_in_dir(dataset_dir))
         pdbFnameOut = str(dataset_dir / "dimple.pdb")
 
+        print(f"Directory name: {dataset_dir}")
         print(f"PDB file name: {pdbFname}")
         print(f"Map file name: {mapFname}")
         print(f"Output name: {pdbFnameOut}")
