@@ -40,8 +40,9 @@ def __main__(data_dirs):
             resolution=3.,
             maskFname=None,
             n_iterations=100,
-            verbose=False,
+            verbose=True,
         )
+
 
 
 if __name__ == "__main__":
